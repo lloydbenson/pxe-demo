@@ -9,12 +9,6 @@
 - name: show contents
   debug: var=memtest_version
 
-## ansible is dumb when it comes to wildcards so ignore warning
-- name: cleanup prev
-  shell: rm -f /opt/tftpboot/bootimg/memtest/memtest86*
-  args:
-    warn: false
-
 - name: get memtest
   get_url:
     url: http://www.memtest.org/download/{{ memtest_version.stdout }}/memtest86+-{{ memtest_version.stdout }}.bin.gz
@@ -29,3 +23,9 @@
   copy:
     src: /opt/tftpboot/bootimg/memtest/memtest86+-{{ memtest_version.stdout }}.bin
     dest: /opt/tftpboot/bootimg/memtest/memtest
+
+## ansible is dumb when it comes to wildcards so ignore warning
+- name: cleanup prev
+  shell: rm -f /opt/tftpboot/bootimg/memtest/memtest86*
+  args:
+    warn: false

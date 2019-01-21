@@ -1,0 +1,17 @@
+menu title Operating Systems
+label Main Menu
+  menu label Main Menu
+  kernel menu.c32
+  append pxelinux.cfg/main_menu
+label centos-7-x86_64
+  menu label centos-7-x86_64
+  kernel bootimg/centos/7/x86_64/vmlinuz
+  append initrd=bootimg/centos/7/x86_64/initrd.img method=http://mirrors.usinternet.com/centos/7/os/x86_64 ramdisk_size=8192 ip=dhcp
+label fedora-29-x86_64
+  menu label fedora-29-x86_64
+  kernel bootimg/fedora/29/x86_64/vmlinuz
+  append initrd=bootimg/fedora/29/x86_64/initrd.img stage2=http://mirrors.kernel.org/fedora/releases/29/Server/x86_64/os repo=http://mirrors.kernel.org/fedora/releases/29/Everything/x86_64/os ramdisk_size=8192 ip=dhcp
+label ubuntu-18.04-x86_64
+  menu label ubuntu-18.04-x86_64
+  kernel bootimg/ubuntu/18.04/x86_64/linux
+  append initrd=bootimg/ubuntu/18.04/x86_64/initrd.gz ramdisk_size=8192 ip=dhcp

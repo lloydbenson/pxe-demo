@@ -1,0 +1,13 @@
+menu title Hosts
+label Main Menu
+  menu label Main Menu
+  kernel menu.c32
+  append pxelinux.cfg/main_menu
+label example1.site.org
+  menu label example1.site.org
+  kernel bootimg/7/x86_64/vmlinuz
+  append initrd=bootimg/centos/7/x86_64/initrd.img method=http://mirrors.usinternet.com/centos/7/os/x86_64 ip=dhcp ks=http://192.168.1.2/ks/example1.site.org.ks
+label example2.site.org
+  menu label example2.site.org
+  kernel bootimg/fedora/29/x86_64/vmlinuz
+  append initrd=bootimg/fedora/29/x86_64/initrd.img inst.stage2=http://mirrors.kernel.org/fedora/releases/29/Server/x86_64/os inst.repo=http://mirrors.kernel.org/fedora/releases/29/Everything/x86_64/os inst.ip=dhcp inst.ks=http://192.168.1.2/ks/example2.site.org.ks

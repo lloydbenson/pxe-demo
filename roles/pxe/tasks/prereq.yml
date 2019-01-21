@@ -22,7 +22,7 @@
 
 - name: fetch fedora boot images
   get_url:
-    url: http://mirrors.kernel.org/fedora/releases/29/Workstation/x86_84/os/isolinux/{{ item }}
+    url: http://mirrors.kernel.org/fedora/releases/29/Workstation/x86_64/os/isolinux/{{ item }}
     dest: /opt/tftpboot/bootimg/fedora/29/x86_64/{{ item }}
   with_items:
     - initrd.img

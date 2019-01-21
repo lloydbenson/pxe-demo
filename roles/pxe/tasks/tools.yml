@@ -7,10 +7,9 @@
 - name: show contents
   debug: var=memtest_version
 
-## have to warn since ansible still cant deal with wildcards
+## ansible is dumb when it comes to wildcards so ignore warning
 - name: cleanup prev
   shell: rm -f /opt/tftpboot/bootimg/memtest/memtest86*.bin.gz
-  warn: false
 
 - name: get memtest
   get_url:

@@ -8,7 +8,7 @@
   debug: var=memtest_version
 
 - name: cleanup prev
-  shell: rm -f /opt/tftpboot/bootimg/memtest/memtest*.bin.gz
+  shell: rm -f /opt/tftpboot/bootimg/memtest/memtest86*.bin.gz
 
 - name: get memtest
   get_url:

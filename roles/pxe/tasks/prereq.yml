@@ -59,7 +59,7 @@
 - name: copy ubuntu boot images
   copy:
     src: /tmp/netboot/ubuntu-installer/amd64/{{ item }}
-    dest: /opt/tftpboot/ubuntu/18.04/x86_64/{{ item }}
+    dest: /opt/tftpboot/bootimg/ubuntu/18.04/x86_64/{{ item }}
   with_items:
     - linux
     - initrd.gz

@@ -1,0 +1,6 @@
+---
+- name: install pxe packages
+  yum:
+    pkg: "{{ pxe_packages }}"
+    state: installed
+  become: true

@@ -1,0 +1,2 @@
+[pxe]
+localhost ansible_user=admin ansible_host="127.0.0.1"

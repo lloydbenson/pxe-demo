@@ -8,17 +8,17 @@
   debug: var=memtest_version
 
 - name: cleanup prev
-  shell: rm -f /tmp/memtest*
+  shell: rm -f /opt/tftpboot/bootimg/memtest/memtest*.bin.gz
 
 - name: get memtest
   get_url:
     url: http://www.memtest.org/download/{{ memtest_version.stdout }}/memtest86+-{{ memtest_version.stdout }}.bin.gz
-    dest: /opt/tftpboot/memtest/memtest86+-{{ memtest_version.stdout }}.bin.gz
+    dest: /opt/tftpboot/bootimg/memtest/memtest86+-{{ memtest_version.stdout }}.bin.gz
 
 - name: unzip memtest
-  shell: cd /opt/tftpboot/memtest && gunzip memtest86+-{{ memtest_version.stdout }}.bin.gz
+  shell: cd /opt/tftpboot/bootimg/memtest && gunzip memtest86+-{{ memtest_version.stdout }}.bin.gz
 
 - name: cp memtest
   copy:
-    src: /tmp/memtest86+-{{ memtest_version.stdout }}.bin
+    src: /opt/tftpboot/bootimg/memtest/memtest86+-{{ memtest_version.stdout }}.bin
     dest: /opt/tftpboot/bootimg/memtest/memtest

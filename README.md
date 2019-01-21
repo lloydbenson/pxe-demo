@@ -4,7 +4,7 @@
 
 1.  Install Fedora 29 server
 
-1.  Setup a static IP for your network (e.g. 192.168.1.2)
+1.  Setup a static IP for your network (e.g. 192.168.1.2 with router/gw 192.168.1.1)
 
 1.  Setup an admin user that has sudo privs
 

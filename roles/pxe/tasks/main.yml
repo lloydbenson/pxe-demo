@@ -3,3 +3,4 @@
 - include: tools.yml
 - include: menus.yml
 - include: services.yml
+- include: firewalld.yml

@@ -71,7 +71,10 @@
     dest: /opt/tftpboot/{{ item }}
   with_items:
     - pxelinux.0
-    - menu.c32
+    - vesamenu.c32
+    - ldlinux.c32
+    - libcom32.c32
+    - libutil.c32
 
 - name: copy dnsmasq.conf
   copy:

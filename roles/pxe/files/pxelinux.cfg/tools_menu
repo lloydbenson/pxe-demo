@@ -1,7 +1,7 @@
 menu title Tools
 label Main Menu
   menu label Main Menu
-  kernel menu.c32
+  kernel vesamenu.c32
   append pxelinux.cfg/main_menu
 label memtest
   menu label memtest

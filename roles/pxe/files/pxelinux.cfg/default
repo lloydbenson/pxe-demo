@@ -1,6 +1,6 @@
 timeout 600
 ONTIMEOUT localboot
-default menu.c32
+default vesamenu.c32
 prompt 0
 menu title Main Menu
 label localboot
@@ -8,13 +8,13 @@ label localboot
   localboot 1
 label tools_menu
    menu label Tools
-   kernel menu.c32
+   kernel vesamenu.c32
    append pxelinux.cfg/tools_menu
 label os_menu
    menu label Operating Systems
-   kernel menu.c32
+   kernel vesamenu.c32
    append pxelinux.cfg/os_menu
 label hosts_menu
    menu label Hosts
-   kernel menu.c32
+   kernel vesamenu.c32
    append pxelinux.cfg/hosts_menu

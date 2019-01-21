@@ -1,7 +1,7 @@
 menu title Operating Systems
 label Main Menu
   menu label Main Menu
-  kernel menu.c32
+  kernel vesamenu.c32
   append pxelinux.cfg/main_menu
 label centos-7-x86_64
   menu label centos-7-x86_64

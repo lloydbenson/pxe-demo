@@ -10,7 +10,7 @@
 
 1.  ssh as admin user
 
-1.  sudo dnf install git ansible sshpass
+1.  sudo dnf install git ansible sshpass python
 
 1.  git clone http://github.com/lloydbenson/pxe-demo
 

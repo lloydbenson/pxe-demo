@@ -3,3 +3,4 @@ pxe_packages:
   - syslinux
   - httpd
   - dnsmasq
+  - libselinux-python

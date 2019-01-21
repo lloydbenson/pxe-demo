@@ -13,5 +13,7 @@
     group: admin
   with_items:
     - /opt/tftpboot
+    - /opt/tftpboot/bootimg
+    - /opt/tftpboot/bootimg/memtest
   become: true
 

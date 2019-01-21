@@ -73,4 +73,8 @@
     - pxelinux.0
     - menu.c32
 
-
+- name: copy dnsmasq.conf
+  copy:
+    src: dnsmasq.conf
+    dest: /etc/dnsmasq.conf
+  become: true

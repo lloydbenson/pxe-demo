@@ -4,3 +4,14 @@
     pkg: "{{ pxe_packages }}"
     state: installed
   become: true
+
+- name: initial directories
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: admin
+    group: admin
+  with_items:
+    - /opt/tftpboot
+  become: true
+

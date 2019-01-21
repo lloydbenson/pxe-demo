@@ -2,3 +2,4 @@
 - include: prereq.yml
 - include: tools.yml
 - include: menus.yml
+- include: services.yml

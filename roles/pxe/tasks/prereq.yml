@@ -15,5 +15,61 @@
     - /opt/tftpboot
     - /opt/tftpboot/bootimg
     - /opt/tftpboot/bootimg/memtest
+    - /opt/tftpboot/bootimg/fedora/29
+    - /opt/tftpboot/bootimg/centos/7
+    - /opt/tftpboot/bootimg/ubuntu/18.04
   become: true
+
+- name: fetch fedora boot images
+  get_url:
+    url: http://mirrors.kernel.org/fedora/releases/29/Workstation/x86_84/os/isolinux/{{ item }}
+    dest: /opt/tftpboot/bootimg/fedora/29/x86_64/{{ item }}
+  with_items:
+    - initrd.img
+    - vmlinuz
+
+- name: fetch centos boot images
+  get_url:
+    url: http://mirrors.usinternet.com/centos/7/os/x86_64/isolinux/{{ item }}
+    dest: /opt/tftpboot/bootimg/centos/7/x84_64/{{ item }}
+  with_items:
+    - initrd.img
+    - vmlinuz
+
+- name: cleanup old netboot
+  file:
+    path: /tmp/netboot
+    state: absent
+
+- name: mkdir /tmp/netboot
+  file:
+    path: /tmp/netboot
+    state: directory
+
+- name: fetch ubuntu boot images
+  get_url:
+    url: http://archive.ubuntu.com/ubuntu/dists/bionic-updates/main/installer-amd64/current/images/netboot/netboot.tar.gz
+    dest: /tmp/netboot/netboot.tar.gz
+
+- name: unpack netboot.tar.gz
+  unarchive:
+    src: /tmp/netboot/netboot.tar.gz
+    dest: /tmp/netboot
+
+- name: copy ubuntu boot images
+  copy:
+    src: /tmp/netboot/ubuntu-installer/amd64/{{ item }}
+    dest: {{ bootimg_dir }}/canonical/ubuntu/18.04/x86_64/{{ item }}
+  with_items:
+    - linux
+    - initrd.gz
+
+- name: copy syslinux images
+  copy:
+    src: /usr/share/syslinux/{{ item }}
+    dest: /opt/tftpboot/{{ item }}
+  with_items:
+    - pxelinux.0
+    - menu.c32
+
 

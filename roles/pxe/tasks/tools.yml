@@ -3,6 +3,8 @@
   shell: curl -s -L "http://memtest.org/#downiso" | grep VERSION | awk '{print $3}' | awk -F'<' '{print $1}'
   register: memtest_version
   changed_when: "memtest_version.rc != 0"
+  args:
+    warn: false
 
 - name: show contents
   debug: var=memtest_version
@@ -10,6 +12,8 @@
 ## ansible is dumb when it comes to wildcards so ignore warning
 - name: cleanup prev
   shell: rm -f /opt/tftpboot/bootimg/memtest/memtest86*
+  args:
+    warn: false
 
 - name: get memtest
   get_url:

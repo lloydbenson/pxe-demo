@@ -31,7 +31,7 @@
 - name: fetch centos boot images
   get_url:
     url: http://mirrors.usinternet.com/centos/7/os/x86_64/isolinux/{{ item }}
-    dest: /opt/tftpboot/bootimg/centos/7/x84_64/{{ item }}
+    dest: /opt/tftpboot/bootimg/centos/7/x86_64/{{ item }}
   with_items:
     - initrd.img
     - vmlinuz

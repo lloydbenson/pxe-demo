@@ -17,7 +17,9 @@
     dest: /opt/tftpboot/bootimg/memtest/memtest86+-{{ memtest_version.stdout }}.bin.gz
 
 - name: unzip memtest
-  shell: cd /opt/tftpboot/bootimg/memtest && gunzip memtest86+-{{ memtest_version.stdout }}.bin.gz
+  shell: gunzip memtest86+-{{ memtest_version.stdout }}.bin.gz
+  args:
+    chdir: /opt/tftpboot/bootimg/memtest
 
 - name: cp memtest
   copy:

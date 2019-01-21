@@ -15,9 +15,9 @@
     - /opt/tftpboot
     - /opt/tftpboot/bootimg
     - /opt/tftpboot/bootimg/memtest
-    - /opt/tftpboot/bootimg/fedora/29
-    - /opt/tftpboot/bootimg/centos/7
-    - /opt/tftpboot/bootimg/ubuntu/18.04
+    - /opt/tftpboot/bootimg/fedora/29/x86_64
+    - /opt/tftpboot/bootimg/centos/7/x86_64
+    - /opt/tftpboot/bootimg/ubuntu/18.04/x86_64
   become: true
 
 - name: fetch fedora boot images

@@ -13,6 +13,7 @@
     group: admin
   with_items:
     - /opt/tftpboot
+    - /opt/tftpboot/pxelinux.cfg
     - /opt/tftpboot/bootimg
     - /opt/tftpboot/bootimg/memtest
     - /opt/tftpboot/bootimg/fedora/29/x86_64

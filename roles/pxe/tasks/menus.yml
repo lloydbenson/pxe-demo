@@ -1,0 +1,11 @@
+---
+- name: copy menu items
+  copy:
+    src: pxelinux.cfg/{{ item }}
+    dest: /opt/tftpboot/pxelinux.cfg/{{ item }}
+  with_items:
+    - default
+    - main_menu
+    - os_menu
+    - tools_menu
+    - hosts_menu

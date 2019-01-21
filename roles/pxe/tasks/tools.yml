@@ -9,7 +9,7 @@
 
 ## ansible is dumb when it comes to wildcards so ignore warning
 - name: cleanup prev
-  shell: rm -f /opt/tftpboot/bootimg/memtest/memtest86*.bin.gz
+  shell: rm -f /opt/tftpboot/bootimg/memtest/memtest86*
 
 - name: get memtest
   get_url:

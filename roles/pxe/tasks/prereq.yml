@@ -21,6 +21,11 @@
     - /opt/tftpboot/bootimg/ubuntu/18.04/x86_64
   become: true
 
+- name: fetch ipxe
+  get_url:
+    url: http://boot.ipxe.org/undionly.kpxe
+    dest: /opt/tftpboot/undionly.kpxe
+
 - name: fetch fedora boot images
   get_url:
     url: http://mirrors.kernel.org/fedora/releases/29/Workstation/x86_64/os/isolinux/{{ item }}
